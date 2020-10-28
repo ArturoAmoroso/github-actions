@@ -30,6 +30,6 @@ jobs:
           sudo docker tag automation:1.0.0 automation:1.0.0
           
       # Runs a single command using the runners shell
-      #- name: Run a one-line script
+      - name: Run a one-line script
         #run: whoami
-        #run: sudo docker-compose up
+        run: sudo docker-compose up
