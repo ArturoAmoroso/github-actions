@@ -1,0 +1,21 @@
+stages:
+    - build
+    - test
+build-docker:
+    stage: build
+    script:
+        - echo build-stage
+        - docker --version
+#        - sudo cd /root/trello-ui
+        - sudo docker build -t automation:1.0.0 .
+        - sudo docker tag automation:1.0.0 automation:1.0.0
+    tags:
+        - TestDocker
+test-stage:
+    stage: test
+    script:
+        - echo test-stage
+#        - sudo cd /root/trello-ui
+        - sudo docker-compose up
+    tags:
+        - TestDocker
